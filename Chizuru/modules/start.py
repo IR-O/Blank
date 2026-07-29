@@ -17,7 +17,7 @@ async def start_command(client, message: Message):
     )
 
 @Chizuru.on_callback_query()
-async def callback_handler(client, callback_query):
+async def help_callback(client, callback_query):
     data = callback_query.data
     
     if data == "help":
@@ -27,7 +27,6 @@ async def callback_handler(client, callback_query):
                 [InlineKeyboardButton("🔙 Back", callback_data="back")]
             ])
         )
-    
     elif data == "back":
         user = callback_query.from_user
         await callback_query.message.edit_text(
@@ -38,17 +37,3 @@ async def callback_handler(client, callback_query):
                 [InlineKeyboardButton("👨‍💻 Developer", url="https://t.me/narratorxcb")]
             ])
         )
-    
-    elif data == "pause":
-        await callback_query.answer("⏸️ Paused!")
-    
-    elif data == "resume":
-        await callback_query.answer("▶️ Resumed!")
-    
-    elif data == "stop":
-        await callback_query.answer("⏹️ Stopped!")
-        await callback_query.message.delete()
-    
-    elif data == "close_data":
-        await callback_query.message.delete()
-        await callback_query.answer("Closed!")
