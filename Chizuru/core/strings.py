@@ -1,5 +1,3 @@
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
 START_TEXT = """
 🎵 **Hello {}!**
 
@@ -10,7 +8,6 @@ I'm **Chizuru Music Bot** - A powerful music player for Telegram Voice Chats!
 • 📋 Queue management
 • ⏯️ Pause/Resume/Skip
 • 🎨 Beautiful thumbnails
-• 📊 Real-time stats
 
 **📝 Commands:**
 • `/play` - Play audio
@@ -20,7 +17,6 @@ I'm **Chizuru Music Bot** - A powerful music player for Telegram Voice Chats!
 • `/resume` - Resume
 • `/stop` - Stop
 • `/queue` - Show queue
-• `/volume` - Change volume
 
 **👨‍💻 Developer:** @narratorxcb
 """
@@ -44,7 +40,3 @@ HELP_TEXT = """
 • `/volume <0-200>` - Change volume
 • `/current` - Show current song
 """
-
-CLOSE_BUTTON = InlineKeyboardMarkup([
-    [InlineKeyboardButton("❌ Close", callback_data="close_data")]
-])
