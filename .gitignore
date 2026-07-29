@@ -1,0 +1,12 @@
+.env
+__pycache__/
+*.pyc
+*.session
+*.session-journal
+downloads/
+final.png
+cover.jpg
+*.mp3
+*.mp4
+.venv/
+venv/
