@@ -1,7 +1,5 @@
-from pyrogram import filters
-from pyrogram.types import Message
 from functools import wraps
-from Chizuru import Chizuru
+from pyrogram.types import Message
 from config import Config
 
 AUTHORIZED_USERS = [Config.OWNER_ID]
