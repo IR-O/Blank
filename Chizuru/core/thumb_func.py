@@ -34,10 +34,7 @@ async def generate_cover(user_name, title, views, duration, thumbnail):
             font_small = ImageFont.load_default()
         
         for i in range(100, 0, -1):
-            draw.rectangle(
-                [(0, 600 - i), (1280, 720)],
-                fill=(0, 0, 0, int(i * 0.8))
-            )
+            draw.rectangle([(0, 600 - i), (1280, 720)], fill=(0, 0, 0, int(i * 0.8)))
         
         draw.text((40, 600), f"🎵 {title[:50]}", fill=(255, 255, 255), font=font_large)
         draw.text((40, 660), f"👤 {user_name[:20]} • ⏱ {duration} • 👁 {views[:10]}", 
@@ -45,7 +42,6 @@ async def generate_cover(user_name, title, views, duration, thumbnail):
         
         img.save("final.png")
         return "final.png"
-        
     except Exception as e:
         print(f"Cover error: {e}")
         thumb_url = random.choice(LOCAL_THUMBS)
@@ -53,14 +49,6 @@ async def generate_cover(user_name, title, views, duration, thumbnail):
         with open("final.png", "wb") as f:
             f.write(response.content)
         return "final.png"
-
-async def transcode(file_path):
-    return file_path
-
-def convert_seconds(seconds):
-    minutes = seconds // 60
-    seconds = seconds % 60
-    return f"{minutes}:{seconds:02d}"
 
 def time_to_seconds(time_str):
     try:
@@ -73,3 +61,8 @@ def time_to_seconds(time_str):
             return int(parts[0])
     except:
         return 0
+
+def convert_seconds(seconds):
+    minutes = seconds // 60
+    seconds = seconds % 60
+    return f"{minutes}:{seconds:02d}"
