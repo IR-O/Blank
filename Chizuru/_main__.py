@@ -1,7 +1,7 @@
 import asyncio
 import sys
 from pyrogram import idle
-from Chizuru import Chizuru, userbot, pytgcalls
+from Chizuru import Chizuru, userbot
 
 async def main():
     print("""
@@ -17,9 +17,6 @@ async def main():
         
         await Chizuru.start()
         print("🤖 Bot Started!")
-        
-        await pytgcalls.start()
-        print("🎵 PyTgCalls Started!")
         
         print("\n✅ All systems ready!")
         print("📌 Commands: /play, /vplay, /skip, /pause, /resume, /stop")
